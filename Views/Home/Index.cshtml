@@ -1,0 +1,45 @@
+﻿<div id="home">
+    <div class="row">
+        <div class="col-md-6 col-md-offset-3">
+            <br />
+            <h4>Step 1:</h4>
+            <h2>Set Key Cookie</h2>
+            <input type="text" id="key" class="form-control" placeholder="256-Bit (32 Chars)" maxlength="32" />
+            <button type="button" id="create-key" class="btn btn-default">Create</button>
+            <button type="button" id="set-key" class="btn btn-default">Set</button>
+            <br />
+            <button type="button" id="delete-key" class="btn btn-default">Delete</button>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-6">
+            <br />
+            <h4>Step 2:</h4>
+            <h2>Encrypt Text</h2>
+            <input type="text" id="toEncrypt" class="form-control" placeholder="Decrypted String" />
+            <button type="button" id="encrypt-client" name="Encrypt" class="btn btn-default bold-button">CLIENT</button>
+            <button type="button" id="encrypt-server" name="Encrypt" class="btn btn-default bold-button">SERVER</button>
+            <br />
+            <button type="button" id="clear-decrypted" class="btn btn-default">Clear</button>
+        </div>
+        <div class="col-md-6">
+            <br />
+            <h4>Step 3:</h4>
+            <h2>Decrypt Text</h2>
+            <input type="text" id="toDecrypt" class="form-control" placeholder="Encrypted String" />
+            <button type="button" id="decrypt-client" name="Decrypt" class="btn btn-default bold-button">CLIENT</button>
+            <button type="button" id="decrypt-server" name="Decrypt" class="btn btn-default bold-button">SERVER</button>
+            <br />
+            <button type="button" id="clear-encrypted" class="btn btn-default">Clear</button>
+        </div>
+    </div>
+    <div class="row">
+        <br /><br />
+        <div class="col-md-6 col-md-offset-3">
+            <div id="messages">
+                <label id="success"></label>
+                <label id="error"></label>
+            </div>
+        </div>
+    </div>
+</div>
