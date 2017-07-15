@@ -52,8 +52,8 @@ textarea {
 #messages {
     background-color: #222;
     border-radius: 5px;
-    height: 30px;
-    line-height: 30px;
+    height: 40px;
+    text-align: left;
 }
 
 #success {

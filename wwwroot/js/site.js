@@ -13,9 +13,11 @@ $(document).ready(function () {
 
 function Main(crypto) {
     this.crypto = crypto;
+    this.success = null;
+    this.error = null;
     var that = this;
 
-    // Initialize Click Handlers
+    // Initialize Handlers
     this.initHandlers = function () {
         // Client
         $("#encrypt-client").on("click", that.clientCrypto);
@@ -34,6 +36,9 @@ function Main(crypto) {
         $("#clear-decrypted").on("click", function () {
             $("#toEncrypt").val("");
         });
+        // Message Labels
+        that.success = $("#success");
+        that.error = $("#error");
     };
 
     // Client Crypto Actions
@@ -43,16 +48,24 @@ function Main(crypto) {
         if (input != "") {
             var key = that.readKey();
             if (key != null && key.length == 32) {
-                if (method == "Encrypt") {
-                    var result = that.crypto.encrypt(input, key);
-                    $("#toDecrypt").val(result);
-                } else if (method == "Decrypt") {
-                    var result = that.crypto.decrypt(input, key);
-                    $("#toEncrypt").val(result);
+                try {
+                    if (method == "Encrypt") {
+                        var result = that.crypto.encrypt(input, key);
+                        $("#toDecrypt").val(result);
+                    } else if (method == "Decrypt") {
+                        var result = that.crypto.decrypt(input, key);
+                        $("#toEncrypt").val(result);
+                    }
+                    if (result != "") {
+                        that.showSuccess("Text " + method + "ed on CLIENT");
+                    } else {
+                        that.showError("Error in " + method + "ion");
+                    }
+                } catch (ex) {
+                    that.showError(ex.message);
                 }
-                that.showSuccess("Text " + method + "ed on CLIENT");
             } else {
-                that.showError("Key Cookie is not Present")
+                that.showError("Key Cookie is not Present");
             }
         } else {
             that.showError("Input String is Empty");
@@ -113,12 +126,16 @@ function Main(crypto) {
     }
 
     // Show Messages
-    this.showSuccess = function (success) {
-        $("#error").empty();
-        $("#success").html(success);
+    this.showSuccess = function (msg) {
+        that.error.empty();
+        that.error.hide();
+        that.success.show();
+        that.success.html("> " + msg);
     }
-    this.showError = function (error) {
-        $("#success").empty();
-        $("#error").html("ERROR: " + error);
+    this.showError = function (msg) {
+        that.success.empty();
+        that.success.hide();
+        that.error.show();
+        that.error.html("> " + msg);
     }
 };
