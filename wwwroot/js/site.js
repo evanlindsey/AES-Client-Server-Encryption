@@ -13,8 +13,7 @@ $(document).ready(function () {
 
 function Main(crypto) {
     this.crypto = crypto;
-    this.success = null;
-    this.error = null;
+    this.message = null;
     var that = this;
 
     // Initialize Handlers
@@ -36,9 +35,8 @@ function Main(crypto) {
         $("#clear-decrypted").on("click", function () {
             $("#toEncrypt").val("");
         });
-        // Message Labels
-        that.success = $("#success");
-        that.error = $("#error");
+        // Message Label
+        that.message = $("#message");
     };
 
     // Client Crypto Actions
@@ -125,17 +123,15 @@ function Main(crypto) {
         that.showSuccess("Key Cookie Deleted")
     }
 
-    // Show Messages
+    // Show Message
     this.showSuccess = function (msg) {
-        that.error.empty();
-        that.error.hide();
-        that.success.show();
-        that.success.html("> " + msg);
+        that.message.removeClass("error");
+        that.message.addClass("success");
+        that.message.html("> " + msg);
     }
     this.showError = function (msg) {
-        that.success.empty();
-        that.success.hide();
-        that.error.show();
-        that.error.html("> " + msg);
+        that.message.removeClass("success");
+        that.message.addClass("error");
+        that.message.html("> " + msg);
     }
 };

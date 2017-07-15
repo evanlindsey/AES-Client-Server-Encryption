@@ -49,18 +49,18 @@ textarea {
         width: 25%;
     }
 
-#messages {
+#console {
     background-color: #222;
     border-radius: 5px;
     height: 40px;
     text-align: left;
 }
 
-#success {
+.success {
     color: #00ff21;
 }
 
-#error {
+.error {
     color: #ff0000;
 }
 
