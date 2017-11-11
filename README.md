@@ -1,6 +1,6 @@
 # AES: Client <=> Server
 
-[![Build Status](https://travis-ci.org/evanlindsey/AES-Client-Server-Example.svg?branch=master)](https://travis-ci.org/evanlindsey/AES-Client-Server-Encryption)
+[![Build Status](https://travis-ci.org/evanlindsey/AES-Client-Server-Encryption.svg?branch=master)](https://travis-ci.org/evanlindsey/AES-Client-Server-Encryption)
 
 ### Read/write a unique encryption with mirrored libraries
 
