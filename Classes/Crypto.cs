@@ -3,7 +3,7 @@ using System.Text;
 using System.Collections.Generic;
 using System.Security.Cryptography;
 
-namespace aes_client_server
+namespace AES_Client_Server
 {
     public class Crypto
     {

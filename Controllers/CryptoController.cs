@@ -1,10 +1,7 @@
 ﻿using System;
-using System.Linq;
-using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
-using System.Collections.Generic;
 
-namespace aes_client_server.Controllers
+namespace AES_Client_Server.Controllers
 {
     [Route("api/crypto")]
     public class CryptoController : Controller
@@ -36,16 +33,14 @@ namespace aes_client_server.Controllers
                     {
                         if (method == "Encrypt")
                         {
-                            // Encrypt Text
-                            string encrypted = Crypto.Encrypt(input, key);
                             // Return Encrypted Text
+                            string encrypted = Crypto.Encrypt(input, key);
                             return Content(encrypted);
                         }
                         else if (method == "Decrypt")
                         {
-                            // Decrypt Text
-                            string decrypted = Crypto.Decrypt(input, key);
                             // Return Decrypted Text
+                            string decrypted = Crypto.Decrypt(input, key);
                             return Content(decrypted);
                         }
                         else

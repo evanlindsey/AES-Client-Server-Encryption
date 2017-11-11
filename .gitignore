@@ -1,4 +1,9 @@
-bin/*
-obj/*
-.vscode/*
+# macOS
 .DS_Store
+
+# VS Code
+.vscode
+
+# Build
+bin
+obj
